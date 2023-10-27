@@ -13,7 +13,8 @@ function setMovies(data) {
 }
 
 function drawHtml(movies) {
-    const movieHtml = movies.map(movie => `
+    const refinedMovies = refineMoviesBeforeDraw(movies)
+    const movieHtml = refinedMovies.map(movie => `
     <li>
         <span>${movie.순번}</span>
         <span>${movie.영화이름}</span>
@@ -26,6 +27,24 @@ function drawHtml(movies) {
     `)
     const header = document.querySelector("#movie-list-header").outerHTML
     document.querySelector("#movie-list").innerHTML = header + movieHtml.join("")
+}
+
+function refineMoviesBeforeDraw(movies) {
+    return movies.map(movie => ({
+        ...movie,
+        영화평점: `${Math.round(movie.영화평점)} 점`,
+        개봉일: formatDate(movie.개봉일)
+    }))
+}
+
+function formatDate(inputDate) {
+    // inputDate는 문자열로 받아온 날짜 (예: "2016-12-07")
+    const date = new Date(inputDate);
+    const year = date.getFullYear();
+    const month = (1 + date.getMonth()); // 월은 0부터 시작하므로 +1을 해줍니다
+    const day = date.getDate();
+
+    return year + '년 ' + month + '월 ' + day + '일';
 }
 
 function submitFormEventHandler(e) {
