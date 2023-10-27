@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .movie-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+        .movie-list li:first-child {
+            font-weight: bold;
+            border-bottom: 1px solid black;
+        }
+
+        .movie-list li {
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .movie-list li span {
+            display: inline-block;
+            border-right: 1px solid black;
+            width: 10%;
+            margin: 0;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>영화리스트</h2>
+    <ul class="movie-list" id="movie-list">
+        <li id="movie-list-header">
+            <span>영화이름</span>
+            <span>영화평점</span>
+            <span>감독이름</span>
+            <span>개봉일</span>
+            <span>배급사</span>
+            <span>러닝타임</span>
+        </li>
+    </ul>
+</body>
+</html>
