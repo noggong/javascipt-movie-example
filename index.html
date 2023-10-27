@@ -31,14 +31,20 @@
 </head>
 <body>
     <h2>영화리스트</h2>
+    <div>
+        <form id="search-form">
+            <input type="text" name="search-text" /><button>검색</button>
+        </form>
+    </div>
     <ul class="movie-list" id="movie-list">
         <li id="movie-list-header">
-            <span>영화이름</span>
-            <span>영화평점</span>
-            <span>감독이름</span>
-            <span>개봉일</span>
-            <span>배급사</span>
-            <span>러닝타임</span>
+            <span class="sort-button">순번</span>
+            <span class="sort-button">영화이름</span>
+            <span class="sort-button">영화평점</span>
+            <span class="sort-button">감독이름</span>
+            <span class="sort-button">개봉일</span>
+            <span class="sort-button">배급사</span>
+            <span class="sort-button">러닝타임</span>
         </li>
     </ul>
 </body>
